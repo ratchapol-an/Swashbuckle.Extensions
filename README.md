@@ -1,1 +1,1 @@
-# Swashbuckle.AutoRest
+# Swashbuckle.Extensions
