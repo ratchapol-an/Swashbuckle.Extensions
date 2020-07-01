@@ -10,6 +10,7 @@ namespace Swashbuckle.Extensions
         public static void AddAutoRestCompatible(this SwaggerGenOptions options)
         {
             options.SchemaFilter<AutoRestSchemaFilter>();
+            options.OperationFilter<AutoRestOperationFilter>();
         }
 
         public static void MakeValueTypePropertiesRequired(this SwaggerGenOptions options)

@@ -62,10 +62,8 @@ namespace Swashbuckle.Extensions.Filters
 
         private static bool IsRequired(PropertyInfo property, Type propertyType)
         {
-            // Value type properties are required,
             // except: Properties of type Nullable<T> are not required.
-            return propertyType.IsValueType
-                && !(propertyType.IsConstructedGenericType && (propertyType.GetGenericTypeDefinition() == typeof(Nullable<>)))
+            return !(propertyType.IsConstructedGenericType && (propertyType.GetGenericTypeDefinition() == typeof(Nullable<>)))
                 // Properties marked with [Required] are already required (don't require it again).
                 && !property.CustomAttributes.Any(attr => attr.AttributeType == typeof(RequiredAttribute));
         }
@@ -80,4 +78,5 @@ namespace Swashbuckle.Extensions.Filters
             return _camelCaseContractResolver?.GetResolvedPropertyName(property.Name) ?? property.Name;
         }
     }
+}
 }
