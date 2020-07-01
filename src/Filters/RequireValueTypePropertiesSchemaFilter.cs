@@ -79,4 +79,4 @@ namespace Swashbuckle.Extensions.Filters
         }
     }
 }
-}
+
